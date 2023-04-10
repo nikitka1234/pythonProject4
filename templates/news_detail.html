@@ -1,31 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Подключаем Bootstrap CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-  <title>Новость: </title> <!-- Выводите здесь title -->
-</head>
-<body>
-  <div id="wrapper">
-    <!-- Навигация -->
-    {% include "navigation.html" %}
-    <!-- Контент страницы -->
-    <div class="container my-3">
-      <div class="row">
-        <div class="col-md-8">
-          <h1>Заголовок новости</h1> <!-- Выводите здесь title -->
-          <hr>
-          <p>Текст новости.</p> <!-- Выводите здесь text -->
-        </div>
-        {% include "side_navigation.html" %}
-      </div>
-    </div>
-    <!-- Подвал -->
-    {% include "footer.html" %}
-  </div>
-    <!-- Подключаем Bootstrap JS -->
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}
+  {{ title }}
+{% endblock title %}
+{% block content %}
+  <h1>{{ title }}</h1>
+  <hr>
+  <p>{{ text }}</p>
+{% endblock content %}

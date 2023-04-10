@@ -26,19 +26,9 @@ def start_page():
     return render_template("index.html")
 
 
-@app.route('/test/<int:n>')
-def test(n):
-    return render_template("test.html", context=context)
-
-
 @app.route('/news')
 def new():
     return "Новости"
-
-
-@app.route('/example')
-def example():
-    return render_template("example_test.html")
 
 
 @app.route('/news_detail/<int:id>')
